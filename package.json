@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.404.0",
     "next": "14.2.4",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.4.0",
@@ -29,5 +31,5 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4"
   },
-  "packageManager": "bun@1.1.18"
+  "packageManager": "bun@1.0.11"
 }

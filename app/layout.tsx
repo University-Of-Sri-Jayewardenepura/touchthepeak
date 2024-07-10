@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
 
 const switzer = localFont({
   src: [
@@ -34,7 +35,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={switzer.className}>{children}</body>
+      <body className={switzer.className}>
+        <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >{children} 
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
