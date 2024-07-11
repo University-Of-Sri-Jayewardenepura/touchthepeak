@@ -59,6 +59,25 @@
     }
   }
 
+  /* Custom Styles */
+  @layer components {
+    .heading {
+      @apply mx-auto max-w-[22rem] md:max-w-[40rem]  text-3xl font-semibold leading-tight md:text-5xl md:leading-[1.08] space-y-2;
+    }
+
+    .subheading {
+      @apply mt-4 max-w-[26rem] mx-auto md:max-w-xl md:leading-loose;
+    }
+
+    .text-color {
+      @apply text-red-600 dark:text-red-50;
+    }
+
+    .text-color-muted {
+      @apply text-red-600/70 dark:text-red-50/70;
+    }
+  }
+
 
 /* Custom Scroll Bar */
 ::-webkit-scrollbar {
