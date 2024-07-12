@@ -3,6 +3,33 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 
+const companies = [
+  {
+    name: "Unilever",
+    imgSrc: "/companies/unilever.png",
+    category: "Manufacturing",
+    openings: 3,
+  },
+  {
+    name: "MAS Holdings",
+    imgSrc: "/companies/mas.png",
+    category: "Garment/Textile",
+    openings: 1,
+  },
+  {
+    name: "Nestle Lanka Limited",
+    imgSrc: "/companies/nestle.png",
+    category: "Manufacturing",
+    openings: 0,
+  },
+  {
+    name: "CBL",
+    imgSrc: "/companies/cbl.png",
+    category: "Manufacturing",
+    openings: 1,
+  },
+];
+
 export const Jobs = () => {
   return (
     <section className="max-w-6xl pt-12 md:pt-24 lg:pt-32">
@@ -39,15 +66,17 @@ export const Jobs = () => {
             <Link href="/companies" className="mt-3 md:mt-0 flex items-center justify-center font-medium hover:text-color"><span className="inline-flex  items-baseline">See Companies<ChevronRight className="h-3 w-5" /></span></Link>
            </h3>
            <div className="mt-16 grid grid-cols-2 sm:grid-cols-7 gap-10">
-              <div className="flex items-center justify-center">
+            {companies.map((company , key) => (
+              <div className="flex items-center justify-center" key={key}>
                 <Image
-                  src="/companies/99x.png"
+                  src={company.imgSrc}
                   width={99}
                   height={99}
                   quality={100}
-                  alt="99X Technology"
+                  alt={company.name}
                 />
               </div>
+            ))}
            </div>
          </div>
       </div>
