@@ -70,8 +70,8 @@ export const Jobs = () => {
               <div className="flex items-center justify-center" key={key}>
                 <Image
                   src={company.imgSrc}
-                  width={99}
-                  height={99}
+                  width={75}
+                  height={75}
                   quality={100}
                   alt={company.name}
                 />
