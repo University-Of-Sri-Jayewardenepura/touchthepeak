@@ -23,7 +23,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { z } from "zod"
 import { signup } from "./actions";
- 
+import { useTransition } from "react";
+
 const formSchema = z.object({
   username:  z.string().email().refine((email) => email.endsWith('.sjp.ac.lk'), {
     message: "Email must be a valid University of Sri Jayewardenepura address",
@@ -33,12 +34,12 @@ const formSchema = z.object({
   last_name: z.string().min(2).max(50),
 })
 
-function onSubmit(values: z.infer<typeof formSchema>) {
-  //signup(values)
-  console.log(values)
-}
+
+
 
 export default function SignUp() {
+  const [isPending, startTransition] = useTransition();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,6 +49,21 @@ export default function SignUp() {
       password: "",
     },
   });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    const formData = new FormData();
+
+    for (const key in values) {
+      if (values.hasOwnProperty(key)) {
+        formData.append(key, values[key]);
+      }
+    }
+    startTransition(() => {
+     signup(formData);
+    });
+    console.log(values)
+  }
+
   return (
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden">
     <Card className="mx-auto max-w-sm">
@@ -108,16 +124,16 @@ export default function SignUp() {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem>
+            <FormItem >
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} />
+                <Input placeholder="" {...field} type="password" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-         <Button type="submit" className="w-full">
+         <Button type="submit" className="w-full" disabled={isPending}>
             Create an account
           </Button>
         </form>
