@@ -35,7 +35,7 @@ export const Header = () => {
         </div>
         <div className="hidden md:block pt-8 space-x-4">
           <Button variant="outline" size="sm" className="rounded-full px-4" asChild>
-            <Link href="/signin">Sign Up</Link>
+            <Link href="/signup">Sign Up</Link>
           </Button>
           <Button size="sm" className="rounded-full px-4">
             <Link href="/signin" className="flex items-center">
@@ -81,8 +81,8 @@ const MobileNav = ({ isOpen, onClose }) => {
               Blog
             </Link>
             <Separator />
-            <Link href="/signin" className="-mx-3 block px-3 py-2.5 text-base font-semibold leading-7 ">
-              Log In
+            <Link href="/signup" className="-mx-3 block px-3 py-2.5 text-base font-semibold leading-7 ">
+              Sign Up
             </Link>
             <Separator />
             <Link href="/post-job" className="-mx-3 block px-3 py-2.5 text-base font-semibold leading-7 ">
