@@ -4,12 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const companies = [
-  {
-    name: "Unilever",
-    imgSrc: "/companies/unilever.png",
-    category: "Manufacturing",
-    openings: 3,
-  },
+  // {
+  //   name: "Unilever",
+  //   imgSrc: "/companies/unilever.png",
+  //   category: "Manufacturing",
+  //   openings: 3,
+  // },
   {
     name: "MAS Holdings",
     imgSrc: "/companies/mas.png",
@@ -28,6 +28,30 @@ const companies = [
     category: "Manufacturing",
     openings: 1,
   },
+  {
+    name: "CBL",
+    imgSrc: "/companies/brandix.png",
+    category: "Manufacturing",
+    openings: 1,
+  },
+  {
+    name: "CBL",
+    imgSrc: "/companies/dialog.png",
+    category: "Manufacturing",
+    openings: 1,
+  },
+  {
+    name: "CBL",
+    imgSrc: "/companies/mobitel.png",
+    category: "Manufacturing",
+    openings: 1,
+  },
+  {
+    name: "CBL",
+    imgSrc: "/companies/wso2.png",
+    category: "Manufacturing",
+    openings: 1,
+  },
 ];
 
 export const Jobs = () => {
@@ -42,7 +66,7 @@ export const Jobs = () => {
               className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
             />
         </div> */}
-        <div className="flex flex-col items-center text-sm text-color-muted select-none">
+        <div className="flex flex-col items-center text-sm text-color-muted select-none space-y-2">
           <p className="inline-flex items-center gap-2 ">
             <Image
               src="/usjp.jpg"

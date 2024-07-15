@@ -25,11 +25,11 @@ export const Header = () => {
             alt="Touch The Peak"
             className="inline-flex"
           />
-          <h1 className="tracking-wide text-2xl font-semibold">
+          <h1 className="text-color tracking-wide text-2xl font-semibold">
             Touch The Peak
           </h1>
         </Link>
-        <div className="hidden md:block pt-8 space-x-6 ">
+        <div className="hidden md:block pt-8 space-x-6 text-color">
           <Link href="/companies">Companies</Link>
           <Link href="/blog">Blog</Link>
         </div>
@@ -59,9 +59,9 @@ const MobileNav = ({ isOpen, onClose }) => {
     <div className="md:hidden fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-background px-6 py-6 pt-9">
       <div className="flex items-center justify-between">
         <div className="-m-1.5 p-1.5 flex gap-3">
-          <span className="sr-only">Your Company</span>
+          <span className="sr-only">Touch The Peak</span>
           <Image src="/favicon.svg" height="24" width="24" alt="Touch The Peak" />
-          <h1 className="tracking-wide text-2xl font-semibold">
+          <h1 className="text-color tracking-wide text-2xl font-semibold">
             Touch The Peak
           </h1>
         </div>
@@ -71,8 +71,8 @@ const MobileNav = ({ isOpen, onClose }) => {
         </Button>
       </div>
       <div className="mt-6 flow-root">
-        <div className="-my-6 divide-y divide-gray-500/10 pt-6">
-          <div className="space-y-2 py-6">
+        <div className="-my-6 divide-y divide-gray-500/10 pt-6 ">
+          <div className="space-y-2 py-6 ">
             <Link href="/companies" className="-mx-3 block px-3 py-2 text-base font-semibold leading-7 ">
               Companies
             </Link>
