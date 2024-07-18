@@ -1,9 +1,9 @@
 import {
+    BriefcaseBusiness,
+    Building,
     Home,
     LineChart,
-    Package,
     Settings,
-    ShoppingCart,
     Users2,
   } from "lucide-react"
 import {
@@ -27,9 +27,9 @@ export const Sidebar = () => {
                 <TooltipProvider>
                     {[
                         { icon: <Home className="h-5 w-5" />, label: "Dashboard", link: "/dashboard" },
-                        { icon: <ShoppingCart className="h-5 w-5" />, label: "Orders", link: "" },
-                        { icon: <Package className="h-5 w-5" />, label: "Products", link: "" },
-                        { icon: <Users2 className="h-5 w-5" />, label: "Customers", link: "" },
+                        { icon: <Building className="h-5 w-5" />, label: "Companies", link: "/dashboard/companies" },
+                        { icon: <BriefcaseBusiness className="h-5 w-5" />, label: "Jobs", link: "/dashboard/jobs" },
+                        { icon: <Users2 className="h-5 w-5" />, label: "Applicants", link: "/dashboard/applicants" },
                         { icon: <LineChart className="h-5 w-5" />, label: "Analytics", link: "/dashboard/analytics" },
                     ].map((item, index) => (
                         <Tooltip key={index}>

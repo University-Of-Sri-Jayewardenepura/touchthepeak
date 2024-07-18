@@ -19,7 +19,7 @@ async function getClarityData() {
       return response.json()
 }
 
-export default async function Analytics() {
+export default async function Jobs() {
     const data = await getClarityData()
    
     

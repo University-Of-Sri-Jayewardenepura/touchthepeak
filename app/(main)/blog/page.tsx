@@ -17,22 +17,22 @@ export default async function BlogPage() {
     })
 
   return (
-    <div className="container max-w-4xl py-6 lg:py-10">
+    <div className="container max-w-4xl py-12 lg:py-10">
       {posts?.length ? (
         <div className="grid gap-10 sm:grid-cols-2">
           {posts.map((post, index) => (
             <article
               key={post._id}
-              className="group relative flex flex-col space-y-3"
+              className={`group relative flex flex-col space-y-3 ${index === 0 ? 'col-span-2' : ''}`}
             >
               {post.image && (
                 <Image
                   src={post.image}
                   alt={post.title}
-                  width={804}
-                  height={452}
+                  width={index === 0 ? 1608 : 804}
+                  height={index === 0 ? 904 : 452}
                   className="rounded-md border bg-muted transition-colors"
-                  priority={index <= 1}
+                  priority={index === 0}
                 />
               )}
               <h2 className="text-2xl font-extrabold">{post.title}</h2>
